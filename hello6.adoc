@@ -5,7 +5,6 @@ Anton Podviaznikov <anton@podviaznikov.com>
 :docdate: 2017-11-25
 :nofooter:
 :document_type: writing
-
 :tags: ""
 
-abbbmm34
+abbbmm35
