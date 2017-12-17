@@ -1,0 +1,20 @@
+---
+title: "hello6"
+description: "Good post24"
+date: 2017-12-15T20:05:27-08:00
+draft: false
+menu: "writings"
+acknowledgement: "Manny"
+tags: ["abc", "books"]
+---
+
+= hello6
+Anton Podviaznikov <anton@podviaznikov.com>
+:revnumber: 1.0
+:revdate: 2017-11-25
+:docdate: 2017-11-25
+:nofooter:
+:document_type: writing
+:tags: "abc, books"
+
+abbbmm35
