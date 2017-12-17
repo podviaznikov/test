@@ -1,11 +1,14 @@
 ---
 title: "hello6"
-description: "Good post24"
+description: "Good post25"
 date: 2017-12-15T20:05:27-08:00
 draft: false
 menu: "writings"
 acknowledgement: "Manny"
 tags: ["abc", "books"]
+people: 
+places: 
+locations: ["Hello", "san fran", "HK"]
 ---
 
 = hello6
