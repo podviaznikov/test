@@ -1,9 +1,9 @@
 ---
-title: "new post"
-description: "hello"
-date: 2017-12-15T20:05:27-08:00
+title: new post
+date: 2017-12-16 04:05:27 Z
+description: hello
 draft: false
-menu: "writings"
+menu: writings
 acknowledgement: 
 tags: []
 people: []

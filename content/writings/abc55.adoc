@@ -1,11 +1,4 @@
 ---
-title: "abc55"
-description: "Abcde"
-date: 2017-12-15T20:05:27-08:00
-draft: false
-menu: "writings"
-acknowledgement: "Joseph Campbell"
-tags: [books" , "data" , "love]
 ---
 
 = abc55
