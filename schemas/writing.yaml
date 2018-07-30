@@ -1,0 +1,99 @@
+name: writing
+plural_name: writings
+deletable: true
+publishable: true
+properties:
+  - name: main
+    label: Main
+    main: true
+    properties:
+      - name: title
+        type: string
+        widget: h1
+      - name: slug
+        type: string
+        readonly: true
+        depends_on: title
+        value_func: slug
+        hidden: true
+      - name: content
+        type: richtext
+        format: asciidoctor
+  - name: meta
+    label: Meta
+    properties:
+      - name: description
+        type: string
+      - name: acknowledgement
+        type: string
+      - name: license
+        type: string
+        reftype: license
+      - name: content_date
+        type: optionaldate
+        label: When did you write this?
+      - name: authors
+        type: array
+        subtype: string
+        reftype: person
+      - name: locations
+        type: array
+        subtype: string
+        reftype: location
+        delimiter: ;
+      - name: alias
+        type: string
+  - name: discovery
+    label: Discovery
+    properties:
+      - name: tags
+        type: array
+        subtype: string
+        searchable: true
+        reftype: tag
+      - name: people
+        type: array
+        subtype: string
+        searchable: true
+        reftype: person
+      - name: places
+        type: array
+        subtype: string
+        searchable: true
+        reftype: location
+collection_slice:
+  - name: title
+    widget: h3
+  - name: description
+    widget: h4
+  - name: tags
+    widget: ul
+
+templates:
+  - name: asciidoctor
+    template: |
+      ---
+      title: {{tomlPropertyValueByName .model "title"}}
+      url: "/{{propertyValueByName .model "slug"}}"
+      aliases: [{{tomlPropertyValueByName .model "alias"}}]
+      description: {{tomlPropertyValueByName .model "description"}}
+      date: {{tomlPropertyValueByName .model "content_date"}}
+      lastmod: {{formatDate .model.UpdatedAt}}
+      draft: {{ not .model.Public }}
+      acknowledgement: {{tomlPropertyValueByName .model "acknowledgement"}}
+      categories: ["Writings"]
+      tags: {{tomlPropertyValueByName .model "tags"}}
+      people: {{tomlPropertyValueByName .model "people"}}
+      places: {{tomlPropertyValueByName .model "places"}}
+      locations: {{tomlPropertyValueByName .model "locations"}}
+      ---
+
+      = {{propertyValueByName .model "title"}}
+      {{ userFullname .user}} {{ userEmailWithBrackets .user}}
+      :revdate: {{formatDate .model.UpdatedAt}}
+      :docdate: {{formatDate .model.UpdatedAt}}
+      :nofooter:
+      :document_type: {{.schema.Name}}
+      :tags: "{{propertyValueByName .model "tags"}}"
+
+      {{propertyValueByName .model "content"}}
