@@ -1,0 +1,17 @@
+name: trip
+plural_name: trips
+properties:
+  - name: from_city
+    type: string
+  - name: to_city
+    type: string
+  - name: from_country
+    type: string
+  - name: to_country
+    type: string
+  - name: from_date
+    type: string
+  - name: to_date
+    type: string    
+  
+
